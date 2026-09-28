@@ -1,0 +1,21 @@
+{
+  "expo": {
+    "name": "ともログ",
+    "slug": "tomolog-app",
+    "scheme": "tomolog",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "jp.tomolog.app"
+    },
+    "android": {
+      "package": "jp.tomolog.app"
+    },
+    "plugins": ["expo-router"],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
