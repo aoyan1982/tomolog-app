@@ -1,5 +1,5 @@
-import { Link } from "expo-router";
-import { ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
+import { router } from "expo-router";
+import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 import { Card, Pill, ScreenTitle } from "../../src/components/ui";
 import { demoFriends } from "../../src/data/demo";
 import { colors } from "../../src/theme";
@@ -11,7 +11,7 @@ export default function FriendsScreen() {
       <TextInput placeholder="名前・仕事・性格タイプ・趣味で検索" placeholderTextColor="#A0A2AA" style={styles.search} />
       <View style={styles.stack}>
         {demoFriends.map((friend) => (
-          <Link key={friend.id} href={{ pathname: "/friend/[id]", params: { id: friend.id } }} asChild>
+          <Pressable key={friend.id} onPress={() => router.push({ pathname: "/friend/[id]", params: { id: friend.id } })}>
             <Card>
               <View style={styles.row}>
                 <View style={styles.avatar}><Text style={styles.avatarText}>{friend.name.slice(0,1)}</Text></View>
@@ -25,7 +25,7 @@ export default function FriendsScreen() {
                 </View>
               </View>
             </Card>
-          </Link>
+          </Pressable>
         ))}
       </View>
     </ScrollView>
